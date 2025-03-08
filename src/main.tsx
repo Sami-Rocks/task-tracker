@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
+// Modules
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Styles
+import './styles/index.scss'
+
+// Application
+function Application () {
+	// Render
+	return(<div>Hello World</div>)
+}
+
+// Execution
+createRoot(document.getElementById('root')!).render(<Application />)
