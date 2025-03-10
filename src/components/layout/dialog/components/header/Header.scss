@@ -1,0 +1,9 @@
+// Style: Layout > Dialog > Header
+.tt-dialog-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5rem;
+	background-color: var(--accent-color);
+	margin-bottom: 1rem;
+}
