@@ -1,0 +1,11 @@
+// Style: Interface > Button
+.tt-button {
+	background-color: var(--button-background-color);
+	color: var(--button-text-color);
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 1.2rem 2rem;
+	border-radius: var(--border-radius);
+	border: none;
+	cursor: pointer;
+}

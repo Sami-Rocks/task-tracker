@@ -1,3 +1,6 @@
+// Components
+import Button from '../../components/interface/button/Button'
+
 // Styles
 import './Home.scss'
 
@@ -5,8 +8,13 @@ import './Home.scss'
 function Home () {
 	// Render
 	return (
-		<div>
-			<h1>Home</h1>
+		<div data-page="home">
+			<h1 className="tt-headline">Task Tracker</h1>
+			<p className="tt-paragraph">Track your tasks and get things done</p>
+			<Button
+				className="tt-button"
+				onClick={() => {}}
+				text="Get Started" />
 		</div>
 	)
 }

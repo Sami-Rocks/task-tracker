@@ -1,2 +1,13 @@
 // Style: Home (Main)
-[data-page="home"] {}
+[data-page="home"] {
+	max-width: 50rem;
+	margin: 5rem auto;
+	.tt-headline {
+		font-size: 3rem;
+		font-weight: 900;;
+	}
+	.tt-paragraph {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+	}
+}
