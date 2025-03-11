@@ -1,0 +1,33 @@
+// Style: Home > Task Card
+[data-component="task-card"] {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	&:hover {
+		box-shadow: 0 5px 15px -10px var(--shadow-color);
+	}
+	.tt-task-card-text {
+		padding: 1rem;
+	}
+	.tt-task-card-actions {
+		button {
+			padding: 1rem;
+			height: 100%;
+			border: none;
+			color: white;
+			cursor: pointer;
+			&:hover {
+				opacity: .8;
+			}
+		}
+		.tt-task-card-edit {
+			background: var(--button-background-color);
+		}
+		.tt-task-card-delete {
+			background: var(--error-color);
+		}
+	}
+}
+

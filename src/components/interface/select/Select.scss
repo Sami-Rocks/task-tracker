@@ -1,0 +1,14 @@
+// Style: Interface > Select
+[data-interface="select"] {
+	label {
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+	select {
+		border: 0.1px solid #ccc;
+		border-radius: 0.25rem;
+		padding: 0.5rem;
+		width: 100%;
+		outline: none;
+	}
+}

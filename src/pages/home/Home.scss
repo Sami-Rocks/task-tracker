@@ -10,4 +10,10 @@
 		font-size: 1.25rem;
 		margin-bottom: 2rem;
 	}
+	.tt-task-list {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+	}
 }

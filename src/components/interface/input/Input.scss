@@ -1,0 +1,16 @@
+// Style: Interface > Input
+[data-interface="input"] {
+	label {
+		display: block;
+		margin-bottom: 0.25rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+	input {
+		border: 0.1px solid #ccc;
+		border-radius: 0.25rem;
+		padding: 0.5rem 0rem;
+		width: 100%;
+		outline: none;
+	}
+}

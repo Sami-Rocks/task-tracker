@@ -1,0 +1,11 @@
+// Style: Model > Add task dialog
+[data-model="add-task-dialog"] {
+	.tt-add-task-dialog-form {
+		padding: 1.5rem;
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+}
