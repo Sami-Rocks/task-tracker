@@ -11,18 +11,11 @@ import Dispatch from '../../../context/dispatch'
 // Reducers
 import { PRIORITY_ACTIONS } from '../../../reducers/priority'
 
-// Types
-import { Priority } from '../../../types'
+// Constants
+import { PRIORITY } from '../../../constants/priority'
 
 // Styles
 import './Filter.scss'
-
-// Data (Local)
-const priorities: Priority[] = [
-	{ label: 'Low', value: 'Low' },
-	{ label: 'Medium', value: 'Medium' },
-	{ label: 'High', value: 'High' }
-]
 
 // Component: Home > Filter
 function Filter () {
@@ -43,7 +36,7 @@ function Filter () {
 				onChange={event => handleChange(event.target.value)}
 				options={[
 					{ label: 'Any Priority', value: '' },
-					...priorities
+					...PRIORITY
 				]}
 				value={priority || ''} />
 		</span>

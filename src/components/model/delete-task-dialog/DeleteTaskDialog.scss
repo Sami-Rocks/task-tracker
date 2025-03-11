@@ -1,0 +1,10 @@
+// Style: Model > Delete Task Dialog
+[data-model="delete-task-dialog"] {
+	.tt-delete-task-dialog-content {
+		padding: 2rem;
+		p {
+			font-size: 1.25rem;
+			font-weight: 600;
+		}
+	}
+}

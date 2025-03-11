@@ -6,9 +6,13 @@ import Button from '../../interface/button/Button'
 import Dialog from '../../layout/dialog/Dialog'
 import Input from '../../interface/input/Input'
 import Select from '../../interface/select/Select'
+import TextArea from '../../interface/text-area/TextArea'
 
 // Context
 import Dispatch from '../../../context/dispatch'
+
+// Constants
+import { PRIORITY } from '../../../constants/priority'
 
 // Types
 import { Task } from '../../../types'
@@ -33,7 +37,7 @@ function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 		id: task?.id || Date.now(),
 		title: task?.title || '',
 		description: task?.description || '',
-		priority: task?.priority || 'Low',
+		priority: task?.priority || 'low',
 		completed: task?.completed || false
 	})
 
@@ -46,17 +50,24 @@ function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 		setFormData({ ...formData, [name]: value })
 	}
 	function onSubmit () {
-		dispatch({
-			type: TASK_ACTIONS.ADD,
-			payload: formData
-		})
+		if (task) {
+			dispatch({
+				type: TASK_ACTIONS.UPDATE,
+				payload: formData
+			})
+		} else {
+			dispatch({
+				type: TASK_ACTIONS.ADD,
+				payload: formData
+			})
+		}
 		if (confirm) confirm()
 	}
 
 	// Render
 	return (
 		<span data-model="add-task-dialog">
-			<Dialog>
+			<Dialog onClose={cancel}>
 				<Dialog.Header
 					title={title}
 					onClose={cancel}
@@ -69,7 +80,7 @@ function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 							onChange={(event) => updateFormData('title', event.target.value)}
 							value={formData.title}
 						/>
-						<Input
+						<TextArea
 							label="Description"
 							name="description"
 							onChange={(event) => updateFormData('description', event.target.value)}
@@ -79,7 +90,7 @@ function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 							label="Priority"
 							name="priority"
 							onChange={(event) => updateFormData('priority', event.target.value)}
-							options={['Low', 'Medium', 'High']}
+							options={PRIORITY}
 							value={formData.priority}
 						/>
 					</form>

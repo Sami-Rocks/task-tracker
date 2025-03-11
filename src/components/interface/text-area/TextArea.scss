@@ -1,17 +1,18 @@
-// Style: Interface > Input
-[data-interface="input"] {
+// Style: Interface > Text Area
+[data-interface="text-area"] {
 	label {
 		display: block;
 		margin-bottom: 0.25rem;
 		font-size: 0.875rem;
 		font-weight: 600;
 	}
-	input {
+	textarea {
 		border: 0.1px solid #ccc;
 		border-radius: 0.25rem;
 		padding: 0.5rem 3%;
 		width: 94%;
+		min-height: 3rem;
 		outline: none;
-		font-size: 0.875rem;
+		font-size: 0.675rem;
 	}
 }

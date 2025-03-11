@@ -9,11 +9,12 @@ import './Dialog.scss'
 type DialogProps = {
 	children: React.ReactNode
 	className?: string
+	onClose?: () => void
 	style?: React.CSSProperties
 }
 
 // Component: Layout > Dialog
-function Dialog ({ children, className, style }: DialogProps) {
+function Dialog ({ children, className, onClose, style }: DialogProps) {
 	// Render
 	return (
 		<div
@@ -22,8 +23,11 @@ function Dialog ({ children, className, style }: DialogProps) {
 				'tt-dialog' +
 				(className ? ` ${className}` : '')
 			}
+			onClick={onClose}
 			style={style}>
-			<div className="tt-dialog-content">
+			<div
+				className="tt-dialog-content"
+				onClick={e => e.stopPropagation()}>
 				{children}
 			</div>
 		</div>

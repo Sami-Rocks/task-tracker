@@ -1,3 +1,6 @@
+// Modules
+import { X } from 'react-feather'
+
 // Styles
 import './Header.scss'
 
@@ -24,7 +27,7 @@ function Header ({ className, onClose, style, title }: HeaderProps) {
 				<button
 					className="tt-dialog-header-close"
 					onClick={onClose}>
-					Close
+					<X />
 				</button>
 			)}
 		</div>

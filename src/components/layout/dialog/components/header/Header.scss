@@ -6,4 +6,9 @@
 	padding: .5rem;
 	background-color: var(--accent-color);
 	margin-bottom: 1rem;
+	button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;	
+	}
 }

@@ -35,7 +35,7 @@ function Search ({ value, onChange }: SearchProps) {
 			className="tt-search">
 			<input
 				type="text"
-				placeholder="Search"
+				placeholder="Search tasks by title or description"
 				value={value}
 				onChange={({ target: { value } }) => {
 					setQueryText(value)

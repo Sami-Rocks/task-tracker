@@ -3,11 +3,10 @@
 	max-width: 50rem;
 	margin: 5rem auto;
 	.tt-headline {
-		font-size: 3rem;
+		font-size: 2rem;
 		font-weight: 900;;
 	}
 	.tt-paragraph {
-		font-size: 1.25rem;
 		margin-bottom: 2rem;
 	}
 	.tt-task-list {
@@ -21,5 +20,12 @@
 		display: flex;
 		gap: 1rem;
 		align-items: center;
+	}
+}
+
+// Style: Home (Responsive)
+@media (max-width: 768px) {
+	[data-page="home"] {
+		margin: 5rem 2rem;
 	}
 }

@@ -1,0 +1,11 @@
+// Style: Home > Filter
+[data-component="filter"] {
+	width: 30%;
+	select {
+		height: 100%;
+		width: 100%;
+		border: 1px solid var(--border-color);
+		font-size: .8rem;
+		padding: 1rem;
+	}
+}
