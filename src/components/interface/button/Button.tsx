@@ -8,16 +8,18 @@ type ButtonProps = {
 	onClick: () => void
 	style?: React.CSSProperties
 	text: string
+	variant?: 'primary' | 'secondary'
 }
 
 // Component: Interface > Button
-function Button ({ className, children, onClick, style, text}: ButtonProps) {
+function Button ({ className, children, onClick, style, text, variant = 'primary' }: ButtonProps) {
 	// Render
 	return (
 		<button
 			className={
 				'tt-button' +
-				(className ? ` ${className}` : '')
+				(className ? ` ${className}` : '') +
+				(variant ? ` tt-button--${variant}` : '')
 			}
 			onClick={onClick}
 			style={style}>

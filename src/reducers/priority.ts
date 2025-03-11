@@ -1,5 +1,5 @@
 // Types
-import { Priority, Action } from '../types'
+import { Action } from '../types'
 
 // Data (local)
 const actionGroupName = 'PRIORITY'
@@ -10,7 +10,7 @@ const PRIORITY_ACTIONS = {
 }
 
 // Reducer: Priority
-function priority (state: { priority: Priority }, action: Action) {
+function priority (state: { priority: string }, action: Action) {
 	// Action
 	switch (action.type) {
 		case PRIORITY_ACTIONS.SELECT:
@@ -22,3 +22,4 @@ function priority (state: { priority: Priority }, action: Action) {
 
 // Export
 export default priority
+export { PRIORITY_ACTIONS }

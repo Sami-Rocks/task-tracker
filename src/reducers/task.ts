@@ -40,4 +40,4 @@ function tasks (state: { tasks: Task[], priority: Priority }, action: Action) {
 
 // Export
 export default tasks
-	
+export { TASK_ACTIONS }

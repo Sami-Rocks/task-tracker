@@ -1,5 +1,5 @@
 // Modules
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 // Components
 import Button from '../../interface/button/Button'
@@ -7,8 +7,14 @@ import Dialog from '../../layout/dialog/Dialog'
 import Input from '../../interface/input/Input'
 import Select from '../../interface/select/Select'
 
+// Context
+import Dispatch from '../../../context/dispatch'
+
 // Types
 import { Task } from '../../../types'
+
+// Reducers
+import { TASK_ACTIONS } from '../../../reducers/task'
 
 // Styles
 import './AddTaskDialog.scss'
@@ -24,21 +30,26 @@ type AddTaskDialogProps = {
 function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 	// State
 	const [formData, setFormData] = useState({
-		id: task?.id || 0,
+		id: task?.id || Date.now(),
 		title: task?.title || '',
 		description: task?.description || '',
-		priority: task?.priority || '',
+		priority: task?.priority || 'Low',
 		completed: task?.completed || false
 	})
 
 	// Data
 	const title = task ? 'Edit Task' : 'Add Task'
+	const dispatch = useContext(Dispatch)
 
 	// Functions
 	function updateFormData (name: string, value: string) {
 		setFormData({ ...formData, [name]: value })
 	}
 	function onSubmit () {
+		dispatch({
+			type: TASK_ACTIONS.ADD,
+			payload: formData
+		})
 		if (confirm) confirm()
 	}
 
@@ -73,17 +84,18 @@ function AddTaskDialog ({ cancel, confirm, task }: AddTaskDialogProps) {
 						/>
 					</form>
 				</div>
+				<Dialog.Footer>
+					<Button
+						variant="secondary"
+						onClick={cancel}
+						text="Cancel"
+					/>
+					<Button
+						onClick={onSubmit}
+						text="Confirm"
+					/>
+				</Dialog.Footer>
 			</Dialog>
-			<Dialog.Footer>
-				<Button
-					onClick={cancel}
-					text="Cancel"
-				/>
-				<Button
-					onClick={onSubmit}
-					text="Confirm"
-				/>
-			</Dialog.Footer>
 		</span>
 	)
 }

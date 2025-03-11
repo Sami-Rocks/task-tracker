@@ -7,7 +7,7 @@ type SelectProps = {
 	label?: string
 	name?: string
 	onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
-	options: string[]
+	options: { label: string, value: string }[]
 	value: string
 }
 
@@ -30,8 +30,8 @@ function Select ({ className, label, name, onChange, options, value }: SelectPro
 				value={value}>
 				{options && options.length > 0 &&
 					options.map((option) => (
-						<option key={option} value={option}>
-							{option}
+						<option key={option.value} value={option.value}>
+							{option.label}
 						</option>
 					))
 				}

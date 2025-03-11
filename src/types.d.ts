@@ -7,8 +7,8 @@ export type Task = {
 }
 
 export type Priority = {
-	id: number
-	name: string
+	label: string
+	value: string
 }
 
 export type Action = {
