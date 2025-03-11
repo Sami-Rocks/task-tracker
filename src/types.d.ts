@@ -5,3 +5,13 @@ export type Task = {
 	priority: string
 	completed: boolean
 }
+
+export type Priority = {
+	id: number
+	name: string
+}
+
+export type Action = {
+	type: string
+	payload: any
+}
